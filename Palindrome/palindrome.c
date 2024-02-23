@@ -2,7 +2,7 @@
 
 int main()
 {
-    int n, result, q, remainder;
+    int n, result = 0, q, remainder;
     printf("Please enter the number: \n");
     scanf("%d", &n);
 
