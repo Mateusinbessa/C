@@ -10,9 +10,9 @@ int main()
 
     while (q != 0)
     {
-        remainder = q % 10;
-        result = result*10 + remainder;
-        q = q/10;
+        remainder = q % 10; // armazena o último dígito do numero
+        result = result*10 + remainder; // forma de inverter o número
+        q = q/10; // descarta o último dígito do numero
     }
 
     if (result == n)
