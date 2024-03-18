@@ -3,8 +3,8 @@
 #include <string.h>
 
 #define ARR_SIZE 10
-#define TRUE 1
-#define FALSE 0
+#define SUCESS 1
+#define ERROR 0
 
 typedef struct aluno
 {
@@ -24,7 +24,7 @@ int main(void)
     Aluno *alunos[10];
     inicializaVetor(alunos);
     imprimeVetor(alunos);
-    if (cadastraAluno(alunos) == 1)
+    if (cadastraAluno(alunos) == SUCESS)
     {
         printf("Aluno cadastrado com sucesso\n");
     }
@@ -32,7 +32,7 @@ int main(void)
     {
         printf("Problema ao cadastrar\n");
     }
-    if (cadastraAluno(alunos) == 1)
+    if (cadastraAluno(alunos) == SUCESS)
     {
         printf("Aluno cadastrado com sucesso\n");
     }
@@ -41,7 +41,7 @@ int main(void)
         printf("Problema ao cadastrar\n");
     }
     imprimeVetor(alunos);
-    if (excluir(alunos, 2) == 1)
+    if (excluir(alunos, 2) == SUCESS)
     {
         printf("Aluno excluido\n");
     }
@@ -87,10 +87,10 @@ int cadastraAluno(Aluno **alunos)
             scanf("%f", &alunos[i]->nota);
             printf("Digite o Nome: ");
             scanf(" %100[^\n]", alunos[i]->nome);
-            return TRUE;
+            return SUCESS;
         }
     }
-    return FALSE;
+    return ERROR;
 }
 
 int excluir(Aluno **alunos, int matricula)
@@ -101,8 +101,8 @@ int excluir(Aluno **alunos, int matricula)
         {
             free(alunos[i]);
             alunos[i] = NULL;
-            return TRUE;
+            return SUCESS;
         }
     }
-    return FALSE;
+    return ERROR;
 }
